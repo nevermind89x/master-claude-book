@@ -1,0 +1,123 @@
+---
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as 'en' | 'es' | 'pt');
+
+const currentYear = new Date().getFullYear();
+
+const langLinks = [
+  { flag: '🇺🇸', label: 'English', path: '/' },
+  { flag: '🇪🇸', label: 'Español', path: '/es/' },
+  { flag: '🇧🇷', label: 'Português', path: '/pt/' },
+];
+
+const builtWithLinks = [
+  { label: 'Claude Code', href: 'https://claude.ai/code' },
+  { label: 'Astro', href: 'https://astro.build' },
+  { label: 'Tailwind CSS', href: 'https://tailwindcss.com' },
+];
+---
+
+<footer class="relative border-t border-white/10 bg-[#05050f]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1">
+        <a href={lang === 'es' ? '/es/' : lang === 'pt' ? '/pt/' : '/'} class="flex items-center gap-2 mb-4">
+          <svg class="w-7 h-7" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="footerBookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8b5cf6" />
+                <stop offset="100%" style="stop-color:#3b82f6" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="2" width="16" height="22" rx="2" fill="url(#footerBookGrad)" opacity="0.9" />
+            <rect x="6" y="2" width="16" height="22" rx="2" fill="url(#footerBookGrad)" />
+            <line x1="9" y1="8" x2="19" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+            <line x1="9" y1="12" x2="19" y2="12" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+            <line x1="9" y1="16" x2="15" y2="16" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+          </svg>
+          <span class="font-bold text-base bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+            Mastering Claude
+          </span>
+        </a>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          {t('footer.tagline')}
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">{t('footer.book_col')}</h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="#features" class="text-slate-400 hover:text-white transition-colors text-sm">
+              {t('nav.features')}
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="text-slate-400 hover:text-white transition-colors text-sm">
+              {t('nav.about')}
+            </a>
+          </li>
+          <li>
+            <a href="#buy" class="text-slate-400 hover:text-white transition-colors text-sm">
+              {t('nav.buy')}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">{t('footer.languages_col')}</h4>
+        <ul class="space-y-3">
+          {
+            langLinks.map((link) => (
+              <li>
+                <a
+                  href={link.path}
+                  class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
+                >
+                  <span>{link.flag}</span>
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">{t('footer.built_with_col')}</h4>
+        <ul class="space-y-3">
+          {
+            builtWithLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-slate-500 text-sm">
+        © {currentYear} {t('footer.copyright')}
+      </p>
+      <p class="text-slate-600 text-xs">
+        {t('footer.lang_support')}
+      </p>
+    </div>
+  </div>
+</footer>

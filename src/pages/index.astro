@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import BuiltWithClaude from '../components/BuiltWithClaude.astro';
+import Features from '../components/Features.astro';
+import AboutAuthor from '../components/AboutAuthor.astro';
+import BuySection from '../components/BuySection.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<Layout lang={lang}>
+  <Navigation lang={lang} />
+  <main>
+    <Hero lang={lang} />
+    <BuiltWithClaude lang={lang} />
+    <Features lang={lang} />
+    <AboutAuthor lang={lang} />
+    <BuySection lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>

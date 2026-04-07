@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "features": "Features",
+    "about": "About",
+    "buy": "Buy",
+    "cta": "Get the Book"
+  },
+  "hero": {
+    "badge": "Built with Claude Code",
+    "headline1": "Master Claude.",
+    "headline2": "Code Smarter.",
+    "subtitle": "After 18 years writing code, I discovered that AI doesn't replace your judgment — it amplifies it. Learn to use Claude as your copilot, recover hours from your week, and write better software without burning out.",
+    "cta_amazon": "Buy on Amazon",
+    "cta_gumroad": "Get PDF — Gumroad",
+    "available": "Available in English · Español · Português",
+    "stat1": "18+ Years Experience",
+    "stat2": "3 Languages",
+    "stat3": "Complete Guide"
+  },
+  "built_with": {
+    "text": "This website was entirely built using Claude Code — the same tool you'll master in the book.",
+    "code_comment": "// Built with Claude Code",
+    "code_line1": "const site = await claude.build({",
+    "code_line2": "  stack: ['Astro', 'Tailwind', 'TypeScript'],",
+    "code_line3": "  developer: 'Francisco'",
+    "code_line4": "});"
+  },
+  "features": {
+    "title": "What You'll Learn",
+    "subtitle": "A practical, hands-on guide covering every aspect of AI-assisted development — from your first prompt to building production-ready agents.",
+    "item1_title": "Smart Prompting",
+    "item1_desc": "Learn the difference between weak and strong prompts. Master iteration strategies that get results on the first try instead of the fifth.",
+    "item2_title": "Debugging with AI",
+    "item2_desc": "Diagnose errors faster, understand cryptic stack traces, and fix bugs in half the time with AI-guided debugging sessions.",
+    "item3_title": "Testing Workflows",
+    "item3_desc": "Generate comprehensive test suites, review edge cases you'd miss, and maintain test quality with AI-assisted workflows.",
+    "item4_title": "Code Automation",
+    "item4_desc": "Eliminate repetitive tasks by building AI pipelines that handle the boring work so you can focus on what actually matters.",
+    "item5_title": "Building Agents",
+    "item5_desc": "A complete chapter dedicated to building a real, production-ready agent from scratch — not a toy, but something you'll actually use.",
+    "item6_title": "Developer Mindset",
+    "item6_desc": "Keep your judgment sharp and use AI as a copilot, not a replacement. Ask well, review well, correct well — the final call is always yours."
+  },
+  "about": {
+    "title": "About the Author",
+    "subtitle": "Written by a developer, for developers.",
+    "bio1": "I've spent 18 years writing code, fixing bugs, and designing systems across every stack imaginable. When AI tools started becoming serious, I didn't reach for hype — I reached for my skepticism.",
+    "bio2": "What I found surprised me. Claude doesn't replace judgment — it amplifies it. The developers who thrive with AI are the ones who stay in command: they ask well, review carefully, and correct without hesitation.",
+    "bio3": "The real promise of AI-assisted development isn't writing more code faster. It's recovering time — for your family, your health, your projects that actually matter. That's what this book is about.",
+    "author_title": "Senior Software Engineer",
+    "author_experience": "18+ years of experience",
+    "quote": "The final decision is always yours. AI is a copilot — you're the pilot."
+  },
+  "buy": {
+    "title": "Get Your Copy",
+    "subtitle": "Choose the format that works best for you.",
+    "kindle_badge": "Kindle",
+    "kindle_title": "Digital Kindle Edition",
+    "kindle_desc": "Best for reading on Kindle devices, phones, and tablets. Optimized for distraction-free reading anywhere.",
+    "kindle_feature1": "Kindle format (.mobi)",
+    "kindle_feature2": "Read anywhere — phone, tablet, e-reader",
+    "kindle_feature3": "Amazon ecosystem integration",
+    "kindle_feature4": "Lifetime updates via Amazon",
+    "kindle_cta": "Buy on Amazon →",
+    "pdf_badge": "PDF",
+    "pdf_title": "PDF Edition",
+    "pdf_desc": "Best for developers who want to reference while coding. Keep it open in a second window while you work.",
+    "pdf_feature1": "PDF format — universal compatibility",
+    "pdf_feature2": "Print-friendly layout",
+    "pdf_feature3": "Instant download via Gumroad",
+    "pdf_feature4": "Lifetime updates included",
+    "pdf_cta": "Get PDF on Gumroad →",
+    "available_languages": "🌍 Available in English, Español, and Português",
+    "secure_note": "Secure checkout powered by Amazon & Gumroad"
+  },
+  "footer": {
+    "tagline": "The Developer's Guide to AI-Powered Programming",
+    "book_col": "Book",
+    "languages_col": "Languages",
+    "built_with_col": "Built With",
+    "copyright": "Built with Claude Code by Francisco.",
+    "lang_support": "Available in 3 languages."
+  }
+}

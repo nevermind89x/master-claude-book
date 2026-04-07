@@ -1,0 +1,154 @@
+---
+import { useTranslations } from '../i18n/utils';
+import { AMAZON_URL, GUMROAD_URL } from '../constants';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as 'en' | 'es' | 'pt');
+---
+
+<section id="buy" class="relative py-24 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-violet-600 rounded-full blur-3xl opacity-10"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-3xl opacity-10"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent mb-4"
+      >
+        {t('buy.title')}
+      </h2>
+      <p class="text-slate-400 text-lg">{t('buy.subtitle')}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col">
+        <div class="mb-6">
+          <span
+            class="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider"
+          >
+            {t('buy.kindle_badge')}
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
+          >
+            <svg class="w-5 h-5 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.07c1.4-.07 2.38.53 3.21.55.96-.18 1.87-.78 3.21-.77 1.51.08 2.64.62 3.37 1.7-3.44 2.08-2.87 6.3.72 7.52-.49 1.07-1.05 2.11-2.51 3.21zM12.03 6.97c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-xl">{t('buy.kindle_title')}</h3>
+        </div>
+
+        <p class="text-slate-400 text-sm mb-6 leading-relaxed">{t('buy.kindle_desc')}</p>
+
+        <ul class="space-y-3 mb-8 flex-1">
+          {
+            ['kindle_feature1', 'kindle_feature2', 'kindle_feature3', 'kindle_feature4'].map(
+              (key) => (
+                <li class="flex items-center gap-3 text-slate-300 text-sm">
+                  <svg
+                    class="w-4 h-4 text-slate-500 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {t(`buy.${key}`)}
+                </li>
+              )
+            )
+          }
+        </ul>
+
+        <a
+          href={AMAZON_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200"
+        >
+          {t('buy.kindle_cta')}
+        </a>
+      </div>
+
+      <div
+        class="relative bg-gradient-to-b from-violet-500/10 to-blue-500/5 backdrop-blur-sm border border-violet-500/30 rounded-2xl p-8 flex flex-col"
+      >
+        <div
+          class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent"
+        >
+        </div>
+
+        <div class="mb-6">
+          <span
+            class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-violet-500/20 to-blue-500/20 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider"
+          >
+            {t('buy.pdf_badge')}
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/30 to-blue-500/30 flex items-center justify-center flex-shrink-0"
+          >
+            <svg class="w-5 h-5 text-violet-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-xl">{t('buy.pdf_title')}</h3>
+        </div>
+
+        <p class="text-slate-400 text-sm mb-6 leading-relaxed">{t('buy.pdf_desc')}</p>
+
+        <ul class="space-y-3 mb-8 flex-1">
+          {
+            ['pdf_feature1', 'pdf_feature2', 'pdf_feature3', 'pdf_feature4'].map((key) => (
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <svg
+                  class="w-4 h-4 text-violet-400 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {t(`buy.${key}`)}
+              </li>
+            ))
+          }
+        </ul>
+
+        <a
+          href={GUMROAD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-blue-600 text-white font-semibold hover:from-violet-500 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-violet-500/25"
+        >
+          {t('buy.pdf_cta')}
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center space-y-3">
+      <p class="text-slate-300 text-base font-medium">{t('buy.available_languages')}</p>
+      <p class="text-slate-500 text-sm flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        {t('buy.secure_note')}
+      </p>
+    </div>
+  </div>
+</section>

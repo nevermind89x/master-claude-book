@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "features": "Conteúdo",
+    "about": "Autor",
+    "buy": "Comprar",
+    "cta": "Obter o Livro"
+  },
+  "hero": {
+    "badge": "Construído com Claude Code",
+    "headline1": "Domine o Claude.",
+    "headline2": "Programe Melhor.",
+    "subtitle": "Depois de 18 anos escrevendo código, descobri que a IA não substitui seu julgamento — ela o amplifica. Aprenda a usar o Claude como seu copiloto, recupere horas da sua semana e escreva software melhor sem se esgotar.",
+    "cta_amazon": "Comprar na Amazon",
+    "cta_gumroad": "Obter PDF — Gumroad",
+    "available": "Disponível em English · Español · Português",
+    "stat1": "18+ Anos de Experiência",
+    "stat2": "3 Idiomas",
+    "stat3": "Guia Completo"
+  },
+  "built_with": {
+    "text": "Este site foi construído inteiramente usando Claude Code — a mesma ferramenta que você vai dominar no livro.",
+    "code_comment": "// Construído com Claude Code",
+    "code_line1": "const site = await claude.build({",
+    "code_line2": "  stack: ['Astro', 'Tailwind', 'TypeScript'],",
+    "code_line3": "  desenvolvedor: 'Francisco'",
+    "code_line4": "});"
+  },
+  "features": {
+    "title": "O Que Você Vai Aprender",
+    "subtitle": "Um guia prático e aplicado cobrindo todos os aspectos do desenvolvimento assistido por IA — do seu primeiro prompt até construir agentes prontos para produção.",
+    "item1_title": "Prompts Inteligentes",
+    "item1_desc": "Aprenda a diferença entre prompts fracos e fortes. Domine estratégias de iteração que geram resultados na primeira tentativa em vez da quinta.",
+    "item2_title": "Depuração com IA",
+    "item2_desc": "Diagnostique erros mais rapidamente, entenda stack traces crípticos e corrija bugs em metade do tempo com sessões de depuração guiadas por IA.",
+    "item3_title": "Fluxos de Teste",
+    "item3_desc": "Gere suites de teste abrangentes, revise casos extremos que você perderia e mantenha a qualidade do teste com fluxos de trabalho assistidos por IA.",
+    "item4_title": "Automação de Código",
+    "item4_desc": "Elimine tarefas repetitivas construindo pipelines de IA que lidam com o trabalho chato para que você possa focar no que realmente importa.",
+    "item5_title": "Construindo Agentes",
+    "item5_desc": "Um capítulo completo dedicado a construir um agente real, pronto para produção do zero — não um brinquedo, mas algo que você vai realmente usar.",
+    "item6_title": "Mentalidade de Desenvolvedor",
+    "item6_desc": "Mantenha seu julgamento afiado e use a IA como copiloto, não como substituto. Pergunte bem, revise bem, corrija bem — a decisão final é sempre sua."
+  },
+  "about": {
+    "title": "Sobre o Autor",
+    "subtitle": "Escrito por um desenvolvedor, para desenvolvedores.",
+    "bio1": "Passei 18 anos escrevendo código, corrigindo bugs e projetando sistemas em todos os stacks imagináveis. Quando as ferramentas de IA começaram a se tornar sérias, não fui atrás do hype — fui atrás do meu ceticismo.",
+    "bio2": "O que encontrei me surpreendeu. O Claude não substitui o julgamento — ele o amplifica. Os desenvolvedores que prosperam com IA são os que permanecem no comando: perguntam bem, revisam com cuidado e corrigem sem hesitar.",
+    "bio3": "A verdadeira promessa do desenvolvimento assistido por IA não é escrever mais código mais rápido. É recuperar tempo — para sua família, sua saúde, seus projetos que realmente importam. É disso que trata este livro.",
+    "author_title": "Engenheiro de Software Sênior",
+    "author_experience": "Mais de 18 anos de experiência",
+    "quote": "A decisão final é sempre sua. A IA é o copiloto — você é o piloto."
+  },
+  "buy": {
+    "title": "Obtenha Sua Cópia",
+    "subtitle": "Escolha o formato que funciona melhor para você.",
+    "kindle_badge": "Kindle",
+    "kindle_title": "Edição Digital Kindle",
+    "kindle_desc": "Ideal para leitura em dispositivos Kindle, telefones e tablets. Otimizado para leitura sem distrações em qualquer lugar.",
+    "kindle_feature1": "Formato Kindle (.mobi)",
+    "kindle_feature2": "Leia em qualquer lugar — telefone, tablet, e-reader",
+    "kindle_feature3": "Integração com o ecossistema Amazon",
+    "kindle_feature4": "Atualizações vitalícias via Amazon",
+    "kindle_cta": "Comprar na Amazon →",
+    "pdf_badge": "PDF",
+    "pdf_title": "Edição PDF",
+    "pdf_desc": "Ideal para desenvolvedores que querem consultar enquanto programam. Mantenha aberto em uma segunda janela enquanto trabalha.",
+    "pdf_feature1": "Formato PDF — compatibilidade universal",
+    "pdf_feature2": "Layout otimizado para impressão",
+    "pdf_feature3": "Download instantâneo via Gumroad",
+    "pdf_feature4": "Atualizações vitalícias incluídas",
+    "pdf_cta": "Obter PDF no Gumroad →",
+    "available_languages": "🌍 Disponível em English, Español e Português",
+    "secure_note": "Checkout seguro via Amazon e Gumroad"
+  },
+  "footer": {
+    "tagline": "O Guia do Desenvolvedor para Programação Assistida por IA",
+    "book_col": "Livro",
+    "languages_col": "Idiomas",
+    "built_with_col": "Construído Com",
+    "copyright": "Construído com Claude Code por Francisco.",
+    "lang_support": "Disponível em 3 idiomas."
+  }
+}
