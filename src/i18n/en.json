@@ -17,7 +17,8 @@
     "available_es": "Español",
     "stat1": "18+ Years Experience",
     "stat2": "2 Languages",
-    "stat3": "Complete Guide"
+    "stat3": "Complete Guide",
+    "free_preview_pill": "Free Preview — Read the first 50 pages ↓"
   },
   "built_with": {
     "text": "This website was entirely built using Claude Code — the same tool you'll master in the book.",
@@ -79,6 +80,18 @@
     "ls_cta": "Buy on Lemon Squeezy →",
     "available_languages": "🌍 Available in English and Español",
     "secure_note": "Secure checkout powered by Gumroad & Lemon Squeezy"
+  },
+  "preview": {
+    "badge": "Free Preview",
+    "title": "Read the first 50 pages — free",
+    "subtitle": "No email required. Just download and start reading. See exactly what's inside before you buy.",
+    "includes": "What's included in the preview:",
+    "item1": "Full table of contents",
+    "item2": "Prologue & author's methodology",
+    "item3": "Part I: Foundations — context window, prompting, tool use",
+    "item4": "First chapters with real TypeScript examples",
+    "cta": "Download Free Preview",
+    "cta_sub": "PDF · 50 pages · No signup"
   },
   "footer": {
     "tagline": "The Developer's Guide to AI-Powered Programming",

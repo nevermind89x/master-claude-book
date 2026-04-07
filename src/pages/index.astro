@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import BuiltWithClaude from '../components/BuiltWithClaude.astro';
 import Features from '../components/Features.astro';
 import AboutAuthor from '../components/AboutAuthor.astro';
+import FreePreview from '../components/FreePreview.astro';
 import BuySection from '../components/BuySection.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
@@ -13,12 +14,52 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout lang={lang}>
+  <div id="free-preview-banner" class="relative z-50 bg-emerald-950/90 border-b border-emerald-500/30 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-center gap-3 text-sm">
+      <span class="text-emerald-400 font-medium flex items-center gap-2">
+        📖 Free preview available — Read the first 50 pages, no signup needed
+      </span>
+      <a
+        href="#free-preview"
+        class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-semibold text-xs hover:bg-emerald-500/30 transition-all duration-200 flex-shrink-0"
+      >
+        Download →
+      </a>
+      <button
+        id="close-banner-btn"
+        aria-label="Close banner"
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-emerald-600 hover:text-emerald-400 transition-colors duration-200 p-1"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const banner = document.getElementById('free-preview-banner');
+      if (!banner) return;
+      if (localStorage.getItem('freePreviewBannerDismissed') === '1') {
+        banner.style.display = 'none';
+        return;
+      }
+      const btn = document.getElementById('close-banner-btn');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          banner.style.display = 'none';
+          localStorage.setItem('freePreviewBannerDismissed', '1');
+        });
+      }
+    })();
+  </script>
   <Navigation lang={lang} />
   <main>
     <Hero lang={lang} />
     <BuiltWithClaude lang={lang} />
     <Features lang={lang} />
     <AboutAuthor lang={lang} />
+    <FreePreview lang={lang} />
     <BuySection lang={lang} />
   </main>
   <Footer lang={lang} />

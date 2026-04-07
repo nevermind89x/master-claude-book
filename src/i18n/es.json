@@ -17,7 +17,8 @@
     "available_es": "Español",
     "stat1": "18+ Años de Experiencia",
     "stat2": "2 Idiomas",
-    "stat3": "Guía Completa"
+    "stat3": "Guía Completa",
+    "free_preview_pill": "Vista Previa Gratis — Lee las primeras 50 páginas ↓"
   },
   "built_with": {
     "text": "Este sitio web fue construido completamente usando Claude Code — la misma herramienta que dominarás en el libro.",
@@ -79,6 +80,18 @@
     "ls_cta": "Comprar en Lemon Squeezy →",
     "available_languages": "🌍 Disponible en English y Español",
     "secure_note": "Pago seguro a través de Gumroad y Lemon Squeezy"
+  },
+  "preview": {
+    "badge": "Vista Previa Gratis",
+    "title": "Lee las primeras 50 páginas — gratis",
+    "subtitle": "Sin correo requerido. Solo descarga y empieza a leer. Ve exactamente qué hay dentro antes de comprar.",
+    "includes": "Qué incluye la vista previa:",
+    "item1": "Índice completo",
+    "item2": "Prólogo y metodología del autor",
+    "item3": "Parte I: Fundamentos — ventana de contexto, prompting, tool use",
+    "item4": "Primeros capítulos con ejemplos reales en TypeScript",
+    "cta": "Descargar Vista Previa Gratis",
+    "cta_sub": "PDF · 50 páginas · Sin registro"
   },
   "footer": {
     "tagline": "La Guía del Desarrollador para Programación Asistida por IA",
