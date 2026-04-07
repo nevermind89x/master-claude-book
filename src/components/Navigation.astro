@@ -11,7 +11,8 @@ const t = useTranslations(lang as 'en' | 'es' | 'pt');
 const langSwitcher = [
   { code: 'en', label: 'EN', flag: '🇺🇸', path: '/' },
   { code: 'es', label: 'ES', flag: '🇪🇸', path: '/es/' },
-  { code: 'pt', label: 'PT', flag: '🇧🇷', path: '/pt/' },
+  // PT hidden until translation is ready
+  // { code: 'pt', label: 'PT', flag: '🇧🇷', path: '/pt/' },
 ];
 ---
 
@@ -20,7 +21,7 @@ const langSwitcher = [
 >
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
-      <a href={lang === 'es' ? '/es/' : lang === 'pt' ? '/pt/' : '/'} class="flex items-center gap-2 flex-shrink-0">
+      <a href={lang === 'es' ? '/es/' : '/'} class="flex items-center gap-2 flex-shrink-0">
         <svg
           class="w-7 h-7"
           viewBox="0 0 28 28"

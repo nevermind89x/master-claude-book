@@ -1,6 +1,6 @@
 ---
 import { useTranslations } from '../i18n/utils';
-import { AMAZON_URL, GUMROAD_URL } from '../constants';
+import { GUMROAD_URL_EN, GUMROAD_URL_ES, LEMONSQUEEZY_URL_EN, LEMONSQUEEZY_URL_ES, PROMO_CODE } from '../constants';
 
 interface Props {
   lang: string;
@@ -8,6 +8,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang as 'en' | 'es' | 'pt');
+
+const gumroadUrl = lang === 'es' ? GUMROAD_URL_ES : GUMROAD_URL_EN;
+const lsUrl = lang === 'es' ? LEMONSQUEEZY_URL_ES : LEMONSQUEEZY_URL_EN;
 ---
 
 <section id="buy" class="relative py-24 overflow-hidden">
@@ -17,126 +20,117 @@ const t = useTranslations(lang as 'en' | 'es' | 'pt');
   </div>
 
   <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2
-        class="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent mb-4"
-      >
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
         {t('buy.title')}
       </h2>
       <p class="text-slate-400 text-lg">{t('buy.subtitle')}</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col">
-        <div class="mb-6">
-          <span
-            class="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider"
-          >
-            {t('buy.kindle_badge')}
+    <!-- Promo code banner -->
+    <div class="mb-10 mx-auto max-w-lg bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/30 rounded-2xl p-5">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-2">
+            🏷️ {t('buy.promo_label')}
           </span>
+          <p class="text-slate-300 text-sm">{t('buy.promo_text')}</p>
+          <p class="text-slate-500 text-xs mt-0.5">{t('buy.promo_expiry')}</p>
         </div>
-
-        <div class="flex items-center gap-3 mb-4">
-          <div
-            class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"
-          >
-            <svg class="w-5 h-5 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.07c1.4-.07 2.38.53 3.21.55.96-.18 1.87-.78 3.21-.77 1.51.08 2.64.62 3.37 1.7-3.44 2.08-2.87 6.3.72 7.52-.49 1.07-1.05 2.11-2.51 3.21zM12.03 6.97c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
-              ></path>
-            </svg>
-          </div>
-          <h3 class="text-white font-bold text-xl">{t('buy.kindle_title')}</h3>
-        </div>
-
-        <p class="text-slate-400 text-sm mb-6 leading-relaxed">{t('buy.kindle_desc')}</p>
-
-        <ul class="space-y-3 mb-8 flex-1">
-          {
-            ['kindle_feature1', 'kindle_feature2', 'kindle_feature3', 'kindle_feature4'].map(
-              (key) => (
-                <li class="flex items-center gap-3 text-slate-300 text-sm">
-                  <svg
-                    class="w-4 h-4 text-slate-500 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {t(`buy.${key}`)}
-                </li>
-              )
-            )
-          }
-        </ul>
-
-        <a
-          href={AMAZON_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200"
+        <button
+          id="promo-copy-btn"
+          data-code={PROMO_CODE}
+          data-copied={t('buy.promo_copied')}
+          data-copy={t('buy.promo_copy')}
+          class="flex items-center gap-2 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 rounded-xl px-4 py-3 transition-all duration-200 group flex-shrink-0"
         >
-          {t('buy.kindle_cta')}
-        </a>
+          <span class="font-mono font-bold text-amber-300 text-lg tracking-widest">{PROMO_CODE}</span>
+          <svg id="promo-copy-icon" class="w-4 h-4 text-amber-400 group-hover:text-amber-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <span id="promo-copy-label" class="text-amber-400 text-xs font-medium">{t('buy.promo_copy')}</span>
+        </button>
       </div>
+    </div>
 
-      <div
-        class="relative bg-gradient-to-b from-violet-500/10 to-blue-500/5 backdrop-blur-sm border border-violet-500/30 rounded-2xl p-8 flex flex-col"
-      >
-        <div
-          class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent"
-        >
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <!-- Gumroad card (primary) -->
+      <div class="relative bg-gradient-to-b from-violet-500/10 to-blue-500/5 backdrop-blur-sm border border-violet-500/30 rounded-2xl p-8 flex flex-col">
+        <div class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent"></div>
 
         <div class="mb-6">
-          <span
-            class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-violet-500/20 to-blue-500/20 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider"
-          >
-            {t('buy.pdf_badge')}
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-violet-500/20 to-blue-500/20 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider">
+            {t('buy.gumroad_badge')}
           </span>
         </div>
 
         <div class="flex items-center gap-3 mb-4">
-          <div
-            class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/30 to-blue-500/30 flex items-center justify-center flex-shrink-0"
-          >
-            <svg class="w-5 h-5 text-violet-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/30 to-blue-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-violet-300" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm.5 17.5h-1.75A3.75 3.75 0 017 13.75v-3.5A3.75 3.75 0 0110.75 6.5H13a3 3 0 013 3v.5h-2v-.5a1 1 0 00-1-1h-2.25A1.75 1.75 0 009 10.25v3.5a1.75 1.75 0 001.75 1.75H12.5v-2H11v-2h3.5v4.5a.5.5 0 01-.5.5h-1.5z"/>
             </svg>
           </div>
-          <h3 class="text-white font-bold text-xl">{t('buy.pdf_title')}</h3>
+          <h3 class="text-white font-bold text-xl">{t('buy.gumroad_title')}</h3>
         </div>
 
-        <p class="text-slate-400 text-sm mb-6 leading-relaxed">{t('buy.pdf_desc')}</p>
+        <p class="text-slate-400 text-sm mb-6 leading-relaxed">{t('buy.gumroad_desc')}</p>
 
         <ul class="space-y-3 mb-8 flex-1">
-          {
-            ['pdf_feature1', 'pdf_feature2', 'pdf_feature3', 'pdf_feature4'].map((key) => (
-              <li class="flex items-center gap-3 text-slate-300 text-sm">
-                <svg
-                  class="w-4 h-4 text-violet-400 flex-shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                {t(`buy.${key}`)}
-              </li>
-            ))
-          }
+          {['gumroad_feature1', 'gumroad_feature2', 'gumroad_feature3', 'gumroad_feature4'].map((key) => (
+            <li class="flex items-center gap-3 text-slate-300 text-sm">
+              <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              {t(`buy.${key}`)}
+            </li>
+          ))}
         </ul>
 
         <a
-          href={GUMROAD_URL}
+          href={gumroadUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-blue-600 text-white font-semibold hover:from-violet-500 hover:to-blue-500 transition-all duration-200 shadow-lg shadow-violet-500/25"
         >
-          {t('buy.pdf_cta')}
+          {t('buy.gumroad_cta')}
+        </a>
+      </div>
+
+      <!-- Lemon Squeezy card -->
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col">
+        <div class="mb-6">
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/10 text-slate-300 text-xs font-semibold uppercase tracking-wider">
+            {t('buy.ls_badge')}
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 text-2xl">
+            🍋
+          </div>
+          <h3 class="text-white font-bold text-xl">{t('buy.ls_title')}</h3>
+        </div>
+
+        <p class="text-slate-400 text-sm mb-6 leading-relaxed">{t('buy.ls_desc')}</p>
+
+        <ul class="space-y-3 mb-8 flex-1">
+          {['ls_feature1', 'ls_feature2', 'ls_feature3', 'ls_feature4'].map((key) => (
+            <li class="flex items-center gap-3 text-slate-300 text-sm">
+              <svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              {t(`buy.${key}`)}
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={lsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200"
+        >
+          {t('buy.ls_cta')}
         </a>
       </div>
     </div>
@@ -152,3 +146,25 @@ const t = useTranslations(lang as 'en' | 'es' | 'pt');
     </div>
   </div>
 </section>
+
+<script>
+  const btn = document.getElementById('promo-copy-btn');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      const code = btn.getAttribute('data-code') || '';
+      const copiedText = btn.getAttribute('data-copied') || 'Copied!';
+      const label = document.getElementById('promo-copy-label');
+      const icon = document.getElementById('promo-copy-icon');
+
+      await navigator.clipboard.writeText(code);
+
+      if (label) label.textContent = copiedText;
+      if (icon) icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`;
+
+      setTimeout(() => {
+        if (label) label.textContent = btn.getAttribute('data-copy') || 'Copy';
+        if (icon) icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />`;
+      }, 2000);
+    });
+  }
+</script>

@@ -13,7 +13,8 @@ const currentYear = new Date().getFullYear();
 const langLinks = [
   { flag: '🇺🇸', label: 'English', path: '/' },
   { flag: '🇪🇸', label: 'Español', path: '/es/' },
-  { flag: '🇧🇷', label: 'Português', path: '/pt/' },
+  // PT hidden until translation is ready
+  // { flag: '🇧🇷', label: 'Português', path: '/pt/' },
 ];
 
 const builtWithLinks = [
@@ -27,7 +28,7 @@ const builtWithLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
       <div class="md:col-span-1">
-        <a href={lang === 'es' ? '/es/' : lang === 'pt' ? '/pt/' : '/'} class="flex items-center gap-2 mb-4">
+        <a href={lang === 'es' ? '/es/' : '/'} class="flex items-center gap-2 mb-4">
           <svg class="w-7 h-7" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="footerBookGrad" x1="0%" y1="0%" x2="100%" y2="100%">

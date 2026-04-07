@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48" role="img" aria-label="Lemon Squeezy">
+  <title>Lemon Squeezy</title>
+
+  <!-- Lemon icon -->
+  <g transform="translate(0, 4)">
+    <!-- Lemon body -->
+    <ellipse cx="20" cy="20" rx="14" ry="16" fill="#FFC233"/>
+    <!-- Lemon highlight -->
+    <ellipse cx="15" cy="13" rx="5" ry="3.5" fill="#FFD96B" opacity="0.6" transform="rotate(-20, 15, 13)"/>
+    <!-- Left nub -->
+    <ellipse cx="6.5" cy="20" rx="3.5" ry="2.5" fill="#FFC233" transform="rotate(10, 6.5, 20)"/>
+    <!-- Right nub -->
+    <ellipse cx="33.5" cy="20" rx="3.5" ry="2.5" fill="#FFC233" transform="rotate(-10, 33.5, 20)"/>
+    <!-- Leaf stem -->
+    <path d="M20 4 Q24 0 30 2 Q25 5 20 6 Z" fill="#5A9E4A"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="46"
+    y="32"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="20"
+    font-weight="700"
+    letter-spacing="-0.3"
+    fill="#FFC233"
+  >Lemon Squeezy</text>
+</svg>
